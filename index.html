@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse visible-xs">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Dashboard</a></li>
+          <li><a href="#">Engagement</a></li>
+          <li><a href="#">User Journey</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div id="wrapper" class="row content" ng-app="App">
+      <div class="col-sm-2 sidenav hidden-xs">
+        <br>
+        <h1>
+          <span><img style="height: 50px" src="/userimg.png" /></span> Mansi
+        </h1>
+        <br>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active">
+            <a class="SideOptions" href="#section1">Dashboard</a>
+          </li>
+          <li><a href="#section2">Engagement</a></li>
+          <li><a class="SideOptions" href="#section3">User Journey</a></li>
+        </ul>
+        <br />
+      </div>
+      <br>
+
+      <div ng-controller="chartsCtrl as vt" class="col-sm-10" id="analyticsContainer">
+        <div class="row">
+
+          <div class="col-sm-2">
+            <div class="well">
+              <h2>Total Mails</h2><img style="height:50px" src="/email.png" /><span
+                style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp5621
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="well">
+              <h2>Unread</h2><img style="height:50px" src="/unread.png" /><span
+                style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp200
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="well">
+              <h2>Devices</h2><img style="height:50px" src="/device.png" /><span
+                style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp5
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="well">
+              <h2> Data</h2><img style="height:50px" src="/folder.png" /><span
+                style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp3GB
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="well">
+              <h2>Notification</h2><img style="height:50px" src="/notification.png" /><span
+                style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp5
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="well">
+              <h2>WiFi</h2><img style="height:50px" src="/wifi.png" /><span
+                style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbspConnected
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div id="pichart" class="well">
+              <div class="col-sm-12">
+                <h1>Devices</h1>
+              </div>
+              <div class="col-sm-9>">
+                <canvas id="pie" class="chart chart-pie" chart-options="vt.chartPieOptions"
+                  chart-data="vt.chartPieCharts" chart-labels="vt.chartPieLabels"
+                  chart-colors="vt.chartPieColours"></canvas>
+              </div>
+              <div class="col-sm-3"></div>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div id="linechart" class="well">
+              <div class="col-sm-12">
+                <h1>Trend</h1>
+              </div>
+              <div class="col-sm-12">
+                <canvas chart-options="vt.chartLineOptions" id="line" class="chart chart-line"
+                  chart-data="vt.chartLineCharts" chart-labels="vt.chartLineLabels" chart-legend="true"
+                  chart-series="vt.chartLineSeries" chart-colors="vt.chartLineColours">
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="col-sm-12">
+                <h1>Browser</h1>
+              </div>
+              <canvas id="bar" class="chart chart-doughnut" chart-options="vt.chartDonutOptions"
+                chart-data="vt.chartDonutcharts" chart-colors="vt.chartDonutColours" chart-legend="true"
+                chart-options="vt.chartDonutOptions" chart-labels="vt.chartDonutLabels">
+              </canvas>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="col-sm-12">
+                <h1>Sessions</h1>
+              </div>
+              <canvas id="base" class="chart-horizontal-bar" chart-data="vt.horChartdata"
+                chart-labels="vt.horChartlabels" chart-colors="vt.horChartColours">
+              </canvas>
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      const screenHeight = $(window).height(); // Storing Height of screen in variable screenHeight
+      const screenWidth = $(window).width(); // Storing Width of screen in variable screenWidth
+      $("#wrapper").css({ height: screenHeight + "px" });
+      //Hotfix for equal height of pichart container and line chart in desktop mode
+      if (screenHeight < screenWidth) {
+        var piwell_height = $("#pichart").outerHeight();
+        $("#linechart").css({ height: piwell_height + "px" });
+        var AnalyticsContainer_Height = $("#analyticsContainer").outerHeight();
+        var wrapperHeight = $("#wrapper").outerHeight();
+        if (AnalyticsContainer_Height > wrapperHeight) {
+          $("#wrapper").css({ height: AnalyticsContainer_Height + "px" });
+        }
+      }
+    });
+  </script>
+  <script src="/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+   /* Set gray background color and 100% height */
+   .sidenav {
+    background-color: lightblue;
+    height: 100%;
+  }
+
+  Body {
+    background-color: #76d7c4;
+  }
+
+  .well {
+    background-color: lightgrey !important;
+    height: 100%;
+  }
+
+  /* On small screens, set height to 'auto' for the grid */
+  @media screen and (max-width: 767px) {
+    .row.content {
+      height: auto;
+    }
+    .navbar{
+        margin-bottom: 0 !important;
+    }
+    .SideOptions {
+      color: black !important;
+    }
+  }
