@@ -23,7 +23,7 @@ and install the required node modules using
 ```sh
 $ git clone https://github.com/skynet-bit/Angular-Analytics-Template.git
 $ cd Angular-Analytics-Template
-$ npm install 
+$ npm install --save
 ```
 
 
