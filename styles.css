@@ -1,16 +1,20 @@
    /* Set gray background color and 100% height */
    .sidenav {
-    background-color: lightblue;
+    background-color: #E7CBA9;
     height: 100%;
   }
 
   Body {
-    background-color: #76d7c4;
+    background-color: #F5F3E7;
   }
 
   .well {
     background-color: lightgrey !important;
     height: 100%;
+    -webkit-box-shadow: 3px 3px 5px 6px #505050;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #505050;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #505050;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  
   }
 
   /* On small screens, set height to 'auto' for the grid */
