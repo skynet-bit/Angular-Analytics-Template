@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Bootstrap Example</title>
+  <title>Angular Analytics Dashboard</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
@@ -15,6 +14,7 @@
 </head>
 
 <body>
+  <!--Navigation bar on mobiles-->
   <nav class="navbar navbar-inverse visible-xs">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -37,10 +37,11 @@
 
   <div class="container-fluid">
     <div id="wrapper" class="row content" ng-app="App">
+      <!--Navigation bar on devices whose width is equal to or more than 768px -->
       <div class="col-sm-2 sidenav hidden-xs">
         <br>
         <h1>
-          <span><img style="height: 50px" src="/userimg.png" /></span> Mansi
+          <span><img style="height: 50px" src="/assets/userimg.png" /></span> Mansi
         </h1>
         <br>
         <ul class="nav nav-pills nav-stacked">
@@ -52,50 +53,49 @@
         </ul>
         <br />
       </div>
-      <br>
-
+      <!--Dashboard Content-->
       <div ng-controller="chartsCtrl as vt" class="col-sm-10" id="analyticsContainer">
         <div class="row">
-
           <div class="col-sm-2">
             <div class="well">
-              <h2>Total Mails</h2><img style="height:50px" src="/email.png" /><span
+              <h2>Total Mails</h2><img style="height:50px" src="/assets/email.png" /><span
                 style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp5621
             </div>
           </div>
           <div class="col-sm-2">
             <div class="well">
-              <h2>Unread</h2><img style="height:50px" src="/unread.png" /><span
+              <h2>Unread</h2><img style="height:50px" src="/assets/unread.png" /><span
                 style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp200
             </div>
           </div>
           <div class="col-sm-2">
             <div class="well">
-              <h2>Devices</h2><img style="height:50px" src="/device.png" /><span
+              <h2>Devices</h2><img style="height:50px" src="/assets/device.png" /><span
                 style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp5
             </div>
           </div>
           <div class="col-sm-2">
             <div class="well">
-              <h2> Data</h2><img style="height:50px" src="/folder.png" /><span
+              <h2> Data</h2><img style="height:50px" src="/assets/folder.png" /><span
                 style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp3GB
             </div>
           </div>
           <div class="col-sm-2">
             <div class="well">
-              <h2>Notification</h2><img style="height:50px" src="/notification.png" /><span
+              <h2>Notification</h2><img style="height:50px" src="/assets/notification.png" /><span
                 style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbsp5
             </div>
           </div>
           <div class="col-sm-2">
             <div class="well">
-              <h2>WiFi</h2><img style="height:50px" src="/wifi.png" /><span
+              <h2>WiFi</h2><img style="height:50px" src="/assets/wifi.png" /><span
                 style="color:blue;font-weight: bold;font-size: 22px;"> &nbsp&nbsp&nbspConnected
             </div>
           </div>
-
         </div>
+
         <div class="row">
+          <!--Pie Chart-->
           <div class="col-sm-4">
             <div id="pichart" class="well">
               <div class="col-sm-12">
@@ -109,6 +109,7 @@
               <div class="col-sm-3"></div>
             </div>
           </div>
+          <!--Line Chart-->
           <div class="col-sm-8">
             <div id="linechart" class="well">
               <div class="col-sm-12">
@@ -124,6 +125,7 @@
           </div>
         </div>
         <div class="row">
+          <!--Donut Chart-->
           <div class="col-sm-6">
             <div class="well">
               <div class="col-sm-12">
@@ -135,6 +137,7 @@
               </canvas>
             </div>
           </div>
+          <!--Horizontal Graph-->
           <div class="col-sm-6">
             <div class="well">
               <div class="col-sm-12">
@@ -146,8 +149,7 @@
             </div>
           </div>
         </div>
-        <div class="row"></div>
-      </div>
+       </div>
     </div>
   </div>
   <script>
@@ -169,5 +171,4 @@
   </script>
   <script src="/app.js"></script>
 </body>
-
 </html>
