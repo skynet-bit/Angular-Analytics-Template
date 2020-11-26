@@ -26,4 +26,6 @@ $ cd Angular-Analytics-Template
 $ npm install --save
 ```
 
+### Demo
+Here you can find a live [preview](https://angularjs-ab40e.firebaseapp.com/) of the page.
 
